@@ -8,14 +8,27 @@
             var robotArm = new RobotArm(canvas);
             
             // Het level inladen
-            robotArm.loadLevel("exercise 1");
+            robotArm.loadLevel("exercise 12");
             
             // Jou instructies volgen hier
-            robotArm.moveRight();
+            for (a = 0; a < 9;) { 
             robotArm.grab();
-            robotArm.moveLeft();
-            robotArm.drop();
-            
+            if (robotArm.scan() == 'red') {
+                for (i = 9; i > a;i--){
+                    robotArm.moveRight();
+
+
+                } 
+                robotArm.drop();
+                for (j = 8; j > a;j--){
+                    robotArm.moveLeft();
+
+                }
+}else {
+                    robotArm.drop();
+                    robotArm.moveRight();
+            }a++;
+        }
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();
         </script>

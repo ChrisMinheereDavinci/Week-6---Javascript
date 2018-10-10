@@ -1,42 +1,59 @@
 <html>
-    <body>
-        <canvas id="canvas" width="800" height="600"></canvas>
-        <script src="js/main.js"></script>
-        <script>
-            // Robotarm bibliotheek inladen
-            var canvas = document.getElementById("canvas");
-            var robotArm = new RobotArm(canvas);
-            
-            // Het level inladen
-            robotArm.loadLevel("exercise 10");
-            
-            // Jou instructies volgen hier
-            var rechts = 1;
-            var links = 2;
 
-         for (var j = 0; j < 4; j++) { 
-           robotArm.moveRight();}
-           robotArm.grab();
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <script src="js/main.js"></script>
+    <script>
+        // Robotarm bibliotheek inladen
+        var canvas = document.getElementById("canvas");
+        var robotArm = new RobotArm(canvas);
 
-            for (var i = 0; i < 4; i++) {
+        // Het level inladen
+        robotArm.loadLevel("exercise 10");
 
-              for (var a = 0; a < i; a++) {
+        // Jou instructies volgen hier
 
-                    for (var k = 0; k < rechts; k++) {
-                        robotArm.moveRight();
-                    }
-                    rechts += 2;
-                    robotArm.drop();
 
-                    for(var l = 0; l < links; l++){
-                    robotArm.moveLeft();
-                }
-                links += 2;
-                robotArm.grab();
-                }
+        for (var j = 5; j > 0; j--) {
+            robotArm.grab();
+            for (var i = 9; i > 0; i--) {
+                robotArm.moveRight();
             }
-            // De door jou opgegeven instructies uitvoeren
-            robotArm.run();
-        </script>
-    </body>
+            //rechts += 2;
+            robotArm.drop();
+
+
+            for (var a = 8; a > 0; a--) {
+                robotArm.moveLeft();
+            }
+
+        }
+
+        /*for (var j = 0; j < 4; j++) { 
+          robotArm.moveRight();}
+          robotArm.grab();k
+
+           for (var i = 0; i < 4; i++) {
+
+             for (var a = 0; a < i; a++) {
+
+                   for (var k = 0; k < rechts; k++) {
+                       robotArm.moveRight();
+                   }
+                   rechts += 2;
+                   robotArm.drop();
+
+                   for(var l = 0; l < links; l++){
+                   robotArm.moveLeft();
+               }
+               links += 2;
+               robotArm.grab();
+               }
+           }
+           */
+        // De door jou opgegeven instructies uitvoeren
+        robotArm.run();
+    </script>
+</body>
+
 </html>

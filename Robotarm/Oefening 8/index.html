@@ -12,16 +12,14 @@
             
             // Jou instructies volgen hier
             robotArm.speed = 900;
+            robotArm.moveRight();
     for (var a = 0; a < 7; a++) {
-        robotArm.moveRight();
-        robotArm.grab();
+         robotArm.grab();
         for (var i = 0; i < 8; i++) {
-            robotArm.speed = 2000;
             robotArm.moveRight();
         }
         robotArm.drop();
-        for (var j = 0; j < 9; j++) {
-            robotArm.speed = 2000;
+        for (var j = 0; j < 8; j++) {
             robotArm.moveLeft();
         }
     }
